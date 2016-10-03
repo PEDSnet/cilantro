@@ -255,19 +255,8 @@ define([
         },
 
         serializeData: function() {
-            var url;
-
-            // 2.3.x compatibility
-            if (this.model.attributes._links) {
-                var link = this.model.get('_links').children;
-                url = link ? link.href : null;
-            }
-            else {
-                url = this.model.links.children;
-            }
-
             return {
-                url: url,
+                url: null,
                 label: this.model.get('label')
             };
         },
